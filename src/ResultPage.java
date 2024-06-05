@@ -21,12 +21,22 @@ public class ResultPage extends HttpServlet {
 		PrintWriter pw = response.getWriter();
 		for(int i = 0; i < cnt; i++) {
 			System.out.println(cnt + " , " + txt);
-			pw.append((i + 1) + " "+ txt);
+			pw.append((i + 1) + " : "+ txt);
 		}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		System.out.println("포스트");
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
+		int cnt = Integer.parseInt(request.getParameter("cnt"));
+		String txt = request.getParameter("txt");
+		PrintWriter pw = response.getWriter();
+		for(int i = 0; i < cnt; i++) {
+			System.out.println(cnt + " , " + txt);
+			pw.append((i + 1) + " : "+ txt);
+		}
 	}
 
 }

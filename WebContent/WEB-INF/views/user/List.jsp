@@ -15,7 +15,7 @@
 	<div class="container mt-3">
 	  <h1 class="display-1 text-center">사용자 목록</h1>
 	  <div class="btn-group">
-	    <a href="Create.html" class="btn btn-primary">사용자 추가</a>
+	    <a href="Create" class="btn btn-primary">사용자 추가</a>
 	  </div>
 	  <table class="table table-hover mt-3">
 	    <thead class="table-dark">
@@ -26,12 +26,12 @@
 	      </tr>
 	    </thead>
 	    <tbody>
-	      <tr class="cursor-pointer" onclick="location.href = 'Select.html';">
+	      <tr class="cursor-pointer" onclick="location.href = 'Select';">
 	        <td>스티븐</td>
 	        <td>jobs@shellfolder.com</td>
 	        <td>2023-02-28</td>
 	      </tr>
-	      <tr class="cursor-pointer" onclick="location.href = 'Select.html';">
+	      <tr class="cursor-pointer" onclick="location.href = 'Select';">
 	        <td>에브릴</td>
 	        <td>lavigne@shellfolder.com</td>
 	        <td>2023-02-27</td>

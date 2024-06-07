@@ -41,10 +41,10 @@
 		</form>
 		<div class="d-flex">
 		  <div class="p-2 flex-fill d-grid">
-				<a href="Select.html" class="btn btn-primary">생성</a>
+				<a href="Select" class="btn btn-primary">생성</a>
 		  </div>
 		  <div class="p-2 flex-fill d-grid">
-				<a href="List.html" class="btn btn-primary">취소</a>
+				<a href="List" class="btn btn-primary">취소</a>
 		  </div>
 		</div>
 	</div>

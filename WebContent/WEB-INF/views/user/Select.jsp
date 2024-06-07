@@ -41,13 +41,13 @@
 		</form>
 		<div class="d-flex">
 		  <div class="p-2 flex-fill d-grid">
-		  	<a href="Update.html" class="btn btn-primary">수정</a>
+		  	<a href="Update" class="btn btn-primary">수정</a>
 		  </div>
 		  <div class="p-2 flex-fill d-grid">
-				<a href="List.html" class="btn btn-primary">삭제</a>
+				<a href="List" class="btn btn-primary">삭제</a>
 		  </div>
 		  <div class="p-2 flex-fill d-grid">
-			<a href="List.html" class="btn btn-primary">취소</a>
+			<a href="List" class="btn btn-primary">취소</a>
 		  </div>
 		</div>
 	</div>

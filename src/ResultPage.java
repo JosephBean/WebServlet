@@ -15,6 +15,16 @@ public class ResultPage extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //		Util.ko(request, response);
 		System.out.println("이동");
+		print(request, response);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		Util.ko(request, response);
+		System.out.println("포스트");
+		print(request, response);
+	}
+	
+	private void print(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int cnt = Integer.parseInt(request.getParameter("cnt"));
 		String txt = request.getParameter("txt");
 		PrintWriter pw = response.getWriter();
@@ -23,19 +33,5 @@ public class ResultPage extends HttpServlet {
 			pw.append((i + 1) + " : "+ txt);
 		}
 	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		Util.ko(request, response);
-		System.out.println("포스트");
-		int cnt = Integer.parseInt(request.getParameter("cnt"));
-		String txt = request.getParameter("txt");
-		PrintWriter pw = response.getWriter();
-		for(int i = 0; i < cnt; i++) {
-			System.out.println(cnt + " , " + txt);
-			pw.append((i + 1) + " - "+ txt);
-		}
-	}
-	
-	
 
 }

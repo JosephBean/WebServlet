@@ -1,15 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>사용자 정보</title>
+<title>사용자 수정</title>
 <link rel="icon" href="../../img/logo.png" type="image/x-icon">
 <!-- <link href="../../lib/bootstrap@5.2.3/css/bootstrap.min.css" rel="stylesheet"> -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 	<div class="container mt-3">
-	  <h1 class="display-1 text-center">사용자 정보</h1>
+	  <h1 class="display-1 text-center">사용자 수정</h1>
 		<form>
 		  <div class="mb-3 mt-3">
 		    <label for="name" class="form-label">이름:</label>
@@ -17,11 +18,11 @@
 		  </div>
 		  <div class="mb-3 mt-3">
 		    <label for="email" class="form-label">이메일:</label>
-		    <input type="email" class="form-control" id="email" placeholder="이메일를 입력하세요." name="email" readonly="readonly">
+		    <input type="email" class="form-control" id="email" placeholder="이메일를 입력하세요." name="email">
 		  </div>
 		  <div class="mb-3">
 		    <label for="pwd" class="form-label">비밀번호:</label>
-		    <input type="password" class="form-control" id="pwd" placeholder="비밀번호를 입력하세요." name="pwd" readonly="readonly">
+		    <input type="password" class="form-control" id="pwd" placeholder="비밀번호를 입력하세요." name="pwd">
 		  </div>
 			<div class="d-flex">
 			  <div class="p-2 flex-fill">
@@ -40,13 +41,10 @@
 		</form>
 		<div class="d-flex">
 		  <div class="p-2 flex-fill d-grid">
-		  	<a href="Update.html" class="btn btn-primary">수정</a>
+				<a href="Select.html" class="btn btn-primary">저장</a>
 		  </div>
 		  <div class="p-2 flex-fill d-grid">
-				<a href="List.html" class="btn btn-primary">삭제</a>
-		  </div>
-		  <div class="p-2 flex-fill d-grid">
-			<a href="List.html" class="btn btn-primary">취소</a>
+			<a href="Select.html" class="btn btn-primary">취소</a>
 		  </div>
 		</div>
 	</div>

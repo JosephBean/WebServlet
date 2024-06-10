@@ -10,6 +10,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.ibatis.session.SqlSession;
+
+import db.DbConn;
+
 @WebServlet("/Insert")
 public class Insert extends HttpServlet {
 	
@@ -25,6 +29,11 @@ public class Insert extends HttpServlet {
 		userMap.put("email", email);
 		userMap.put("pwd",	 pwd);
 		userMap.put("gender", gender);
+		
+		SqlSession sql = DbConn.getFac().openSession();
+		int status = sql.insert("user.add", userMap);
+		System.out.println("상태값 : " + status);
+		sql.commit();
 		
 		System.out.println(name + ", " + email + ", " + pwd + ", " + gender);
 		

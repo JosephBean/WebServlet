@@ -7,29 +7,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.servlet.Utils;
-
-@WebServlet("/Select")
-public class Select extends HttpServlet {
+@WebServlet("/Insert")
+public class Insert extends HttpServlet {
 	
-	private final String page = "user/Select.jsp";
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Utils.print(request, response, page);
-	}
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("여기에요~~");
 		String name = request.getParameter("name");
 		String email = request.getParameter("email");
 		String pwd = request.getParameter("pwd");
 		String gender = request.getParameter("gender");
 		
-		request.setAttribute("name", name);
-		request.setAttribute("email", email);
-		request.setAttribute("pwd", pwd);
-		request.setAttribute("gender", gender);
+		System.out.println(name + ", " + email + ", " + pwd + ", " + gender);
 		
-		Utils.print(request, response, page);
 	}
 
 }

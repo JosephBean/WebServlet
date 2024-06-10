@@ -1,6 +1,9 @@
 package user;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,6 +19,12 @@ public class Insert extends HttpServlet {
 		String email = request.getParameter("email");
 		String pwd = request.getParameter("pwd");
 		String gender = request.getParameter("gender");
+		
+		Map<String, String> userMap = new HashMap<String, String>();
+		userMap.put("name",	 name);
+		userMap.put("email", email);
+		userMap.put("pwd",	 pwd);
+		userMap.put("gender", gender);
 		
 		System.out.println(name + ", " + email + ", " + pwd + ", " + gender);
 		

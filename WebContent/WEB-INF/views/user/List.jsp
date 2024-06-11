@@ -1,3 +1,5 @@
+<%@page import="user.UserDTO"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
@@ -11,6 +13,15 @@
 	.cursor-pointer {cursor: pointer;}
 </style>
 </head>
+<%
+	
+Object obj = request.getAttribute("list");
+List<UserDTO> list = null;
+if(obj != null) {
+	list = (List<UserDTO>) obj;
+}
+
+%>
 <body>
 	<div class="container mt-3">
 	  <h1 class="display-1 text-center">사용자 목록</h1>
@@ -26,16 +37,17 @@
 	      </tr>
 	    </thead>
 	    <tbody>
-	      <tr class="cursor-pointer" onclick="location.href = 'Select';">
-	        <td>스티븐</td>
-	        <td>jobs@shellfolder.com</td>
-	        <td>2023-02-28</td>
+<% 
+	for(UserDTO dto : list) { 
+%>
+	      <tr class="cursor-pointer" onclick="location.href = 'Select?no=<%=dto.getNo()%>';">
+	        <td><%=dto.getName() %></td>
+	        <td><%=dto.getEmail() %></td>
+	        <td><%=dto.getRegDate() %></td>
 	      </tr>
-	      <tr class="cursor-pointer" onclick="location.href = 'Select';">
-	        <td>에브릴</td>
-	        <td>lavigne@shellfolder.com</td>
-	        <td>2023-02-27</td>
-	      </tr>
+<%
+	}
+%>
 	    </tbody>
 	  </table>
 	</div>

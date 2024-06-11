@@ -19,4 +19,8 @@
   	SELECT * FROM user WHERE NO = ${no}
   </select>
   
+  <select id="findAll" resultType="user.UserDTO">
+  	SELECT * FROM user
+  </select>
+  
 </mapper>

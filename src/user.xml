@@ -11,4 +11,12 @@
 		(#{name},#{email},#{pwd},#{gender})
   </insert>
   
+  <select id="getNo" resultType="Integer">
+  	SELECT LAST_INSERT_ID() as no
+  </select>
+  
+  <select id="findId" parameterType="String" resultType="HashMap">
+  	SELECT * FROM user WHERE NO = ${no}
+  </select>
+  
 </mapper>

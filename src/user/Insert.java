@@ -33,8 +33,15 @@ public class Insert extends HttpServlet {
 		SqlSession sql = DbConn.getFac().openSession();
 		int status = sql.insert("user.add", userMap);
 		System.out.println("상태값 : " + status);
-		sql.commit();
-		
+		if(status == 1) {
+			int no = sql.selectOne("user.getNo");
+//			System.out.println("no : " + no);
+			sql.commit();
+			
+			response.sendRedirect("Select?no=" + no); // get방식 호출 : 생성된 사용자 번호 전달
+		} else {
+			sql.rollback();
+		}
 		System.out.println(name + ", " + email + ", " + pwd + ", " + gender);
 		
 	}

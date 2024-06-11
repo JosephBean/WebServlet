@@ -1,3 +1,4 @@
+<%@page import="java.util.HashMap"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
@@ -10,12 +11,21 @@
 </head>
 <body>
 <%
-	String name = request.getAttribute("name").toString();
-	String email = request.getAttribute("email").toString();
-	String pwd = request.getAttribute("pwd").toString();
-	String gender = request.getAttribute("gender").toString();
+	String name = ""; //request.getAttribute("name").toString();
+	String email = ""; //request.getAttribute("email").toString();
+	String pwd = ""; //request.getAttribute("pwd").toString();
+	String gender = "";
 	
-	out.print(name + ", " + email + ", " + pwd + ", " + gender);
+// 	out.print(name + ", " + email + ", " + pwd + ", " + gender);
+
+Object obj = request.getAttribute("user");
+if(obj != null) {
+	HashMap<String, Object> userMap = (HashMap<String, Object>) obj;
+	name = userMap.get("name").toString();
+	email = userMap.get("email").toString();
+	pwd = userMap.get("pwd").toString();
+	gender = userMap.get("gender").toString();
+}
 %>
 	<div class="container mt-3">
 	  <h1 class="display-1 text-center">사용자 정보</h1>
